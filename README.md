@@ -12,4 +12,4 @@ Inspired By [Anthony Fu](https://github.com/antfu/resume) and
 
 ## License
 
-Distributed under the MIT License.
+The source code is licensed by [MIT License](/LICENSE).
