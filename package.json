@@ -1,0 +1,36 @@
+{
+  "name": "resume",
+  "private": true,
+  "author": "Mohammad Ataei",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx ./scripts/serve.ts",
+    "build": "tsx ./scripts/build.ts",
+    "format": "prettier --write . && pnpm lint --fix",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/fs-extra": "^9.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint": "^8.21.0",
+    "fs-extra": "^10.1.0",
+    "handlebars": "^4.7.7",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
+    "puppeteer": "^16.1.0",
+    "tsx": "^3.8.2",
+    "typescript": "^4.7.4"
+  }
+}
