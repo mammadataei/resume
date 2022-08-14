@@ -10,7 +10,7 @@ export function render() {
   const resume = JSON.parse(fs.readFileSync('resume.json', 'utf-8'))
 
   const css = fs.readFileSync(
-    path.resolve(__dirname, '../template/style.css'),
+    path.resolve(__dirname, '../dist/styles.css'),
     'utf-8',
   )
 

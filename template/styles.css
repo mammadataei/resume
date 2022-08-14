@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    width: 210mm;
+    padding: 12.7mm 12.7mm 17.018mm 15.24mm;
+    @apply my-2 mx-auto border shadow;
+  }
+
+  @media print {
+    body {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: none;
+      shadow: none;
+    }
+  }
+}

@@ -16,6 +16,12 @@ const pdf = await page.pdf({
   format: 'A4',
   displayHeaderFooter: false,
   printBackground: true,
+  margin: {
+    top: '12.7mm',
+    right: '12.7mm',
+    bottom: '17.018mm',
+    left: '15.24mm',
+  },
 })
 
 await browser.close()
