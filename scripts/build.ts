@@ -23,7 +23,7 @@ export function render() {
   const partials = fs.readdirSync(path.join(__dirname, '../src/partials'))
 
   partials.forEach(function (filename) {
-    const matches = /^([^.]+).hbs$/.exec(filename)
+    const matches = /^([^.]+).html$/.exec(filename)
     if (!matches) {
       return
     }
