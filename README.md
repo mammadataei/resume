@@ -5,6 +5,7 @@ My resume generator using:
 - [JSON Resume](https://jsonresume.org/) standard
 - [Handlebars](https://handlebarsjs.com/) for generating HTML
 - [Puppeteer](https://github.com/puppeteer/puppeteer) for generating PDF
+- [Vite](https://vitejs.dev) for dev server
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 
 Inspired By [Anthony Fu](https://github.com/antfu/resume) and
