@@ -1,5 +1,0 @@
-{
-  "watch": ["template", "scripts"],
-  "ext": "ts,hbs,css",
-  "exec": "tsx ./scripts/serve.ts"
-}
