@@ -3,40 +3,62 @@ import fs from 'fs-extra'
 import puppeteer from 'puppeteer'
 import Handlebars from 'handlebars'
 import { fileURLToPath } from 'url'
+import { createGenerator } from 'unocss'
+import { transformDirectives } from '@unocss/transformer-directives'
+import MagicString from 'magic-string'
+import UnoConfig from '../unocss.config'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const resume = JSON.parse(fs.readFileSync('resume.json', 'utf-8'))
+const resume = JSON.parse(await fs.readFile('resume.json', 'utf-8'))
 
-export function render() {
-  const css = fs.readFileSync(
-    path.resolve(__dirname, '../dist/styles.css'),
+async function transform(code: string) {
+  const s = new MagicString(code)
+  await transformDirectives(s, createGenerator(UnoConfig), {})
+  return s.toString()
+}
+
+async function render() {
+  const styles = await fs.readFile(
+    path.resolve(__dirname, '../src/styles.css'),
     'utf-8',
   )
 
-  const template = fs.readFileSync(
+  const template = await fs.readFile(
     path.resolve(__dirname, '../src/index.html'),
     'utf-8',
   )
 
-  const partials = fs.readdirSync(path.join(__dirname, '../src/partials'))
+  const partialTemplates: Array<string> = []
+  const partials = await fs.readdir(path.join(__dirname, '../src/partials'))
 
-  partials.forEach(function (filename) {
+  for await (const filename of partials) {
     const matches = /^([^.]+).html$/.exec(filename)
-    if (!matches) {
-      return
+
+    if (matches) {
+      const name = matches[1]
+      const filepath = path.join(
+        path.join(__dirname, '../src/partials'),
+        filename,
+      )
+
+      const partialCode = await fs.readFile(filepath, 'utf8')
+
+      partialTemplates.push(partialCode)
+      Handlebars.registerPartial(name, partialCode)
     }
+  }
 
-    const name = matches[1]
-    const filepath = path.join(
-      path.join(__dirname, '../src/partials'),
-      filename,
-    )
-
-    const partial = fs.readFileSync(filepath, 'utf8')
-    Handlebars.registerPartial(name, partial)
+  const uno = createGenerator({
+    ...UnoConfig,
+    preflights: [{ getCSS: async () => await transform(styles) }],
   })
+
+  const allTemplates = [template, partialTemplates].join('\n')
+  const { css, matched } = await uno.generate(allTemplates)
+
+  console.log(`${[...matched].length} utility classes generated.`)
 
   return Handlebars.compile(template)({
     css: css,
@@ -80,6 +102,6 @@ async function saveFile(file: Buffer, filename: string) {
 
 console.log('exporting resume as PDF...')
 
-await saveFile(await buildPDF(render()), 'resume.pdf')
+await saveFile(await buildPDF(await render()), 'resume.pdf')
 
 console.log('Done!')

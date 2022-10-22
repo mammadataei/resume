@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
-    <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+    />
     <style>
       {{{css}}}
     </style>
@@ -16,5 +19,10 @@
       {{> publications }} {{> skills }} {{> languages }} {{> interests }} {{>
       references }}
     </div>
+
+    <script type="module">
+      import 'uno.css'
+      import './styles.css'
+    </script>
   </body>
 </html>
