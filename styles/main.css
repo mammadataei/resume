@@ -2,7 +2,7 @@ body {
   width: 210mm;
   height: 297mm;
   padding: 12.7mm 12.7mm 17.018mm 15.24mm;
-  @apply my-2 mx-auto border;
+  @apply my-2 mx-auto border border-stone-300;
 }
 
 @media print {
