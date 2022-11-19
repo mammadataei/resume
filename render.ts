@@ -3,6 +3,7 @@ import {
   expandGlob,
   Handlebars,
   MagicString,
+  parseYaml,
   presetWebFonts,
   presetWind,
   transformDirectives,
@@ -23,7 +24,7 @@ const handlebars = new Handlebars({
 export async function render() {
   return await handlebars.renderView("main", {
     css: await generateCSS(),
-    resume: JSON.parse(await Deno.readTextFile("resume.json")),
+    resume: parseYaml(await Deno.readTextFile("resume.yml")),
   });
 }
 
