@@ -1,17 +1,18 @@
+import { loadResume } from "./loadResume.ts";
+import { toAbsolutePath } from "./helpers.ts";
 import {
   createGenerator,
   expandGlob,
   Handlebars,
   MagicString,
-  parseYaml,
   presetWebFonts,
   presetWind,
   transformDirectives,
   transformerVariantGroup,
-} from "./deps.ts";
+} from "../deps.ts";
 
 const handlebars = new Handlebars({
-  baseDir: "template",
+  baseDir: toAbsolutePath(import.meta.url, "../template"),
   extname: ".hbs",
   layoutsDir: "",
   partialsDir: "partials",
@@ -24,7 +25,7 @@ const handlebars = new Handlebars({
 export async function render() {
   return await handlebars.renderView("main", {
     css: await generateCSS(),
-    resume: parseYaml(await Deno.readTextFile("resume.yml")),
+    resume: await loadResume(),
   });
 }
 
@@ -48,9 +49,14 @@ const unoConfig = {
 };
 
 async function generateCSS() {
+  const TEMPLATES_GLOB = toAbsolutePath(
+    import.meta.url,
+    "../template/**/**.hbs"
+  );
+
   const templates: Array<string> = [];
 
-  for await (const file of expandGlob("template/**/**.hbs")) {
+  for await (const file of expandGlob(TEMPLATES_GLOB)) {
     templates.push(await Deno.readTextFile(file.path));
   }
 
@@ -70,8 +76,9 @@ async function generateCSS() {
 
 async function resolveStyles() {
   const externalCSS: Array<string> = [];
+  const STYLES_GLOB = toAbsolutePath(import.meta.url, "../styles/**/**.css");
 
-  for await (const file of expandGlob("styles/**/**.css")) {
+  for await (const file of expandGlob(STYLES_GLOB)) {
     externalCSS.push(await Deno.readTextFile(file.path));
   }
 
