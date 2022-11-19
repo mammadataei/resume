@@ -1,6 +1,10 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net --allow-read dev.ts",
-    "build": "deno run --allow-net --allow-read --allow-write --allow-env --allow-run build.ts"
+    "dev": "deno run --allow-net --allow-read --allow-write dev.ts",
+    "build": "deno run --allow-net --allow-read --allow-write --allow-env --allow-run build.ts",
+    "codegen": "deno run --allow-read --allow-write ./utils/codegen.ts"
+  },
+  "compilerOptions": {
+    "types": ["./env.d.ts"]
   }
 }

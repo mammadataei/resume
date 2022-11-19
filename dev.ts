@@ -1,5 +1,5 @@
 import { refresh, serve } from "./deps.ts";
-import { render } from "./render.ts";
+import { render } from "./utils/render.ts";
 
 const middleware = refresh();
 

@@ -1,9 +1,12 @@
 import { emptyDir } from "https://deno.land/std@0.164.0/fs/mod.ts";
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
-import { render } from "./render.ts";
+import { toAbsolutePath } from "./utils/helpers.ts";
+import { render } from "./utils/render.ts";
+
+const OUTPUT_DIR = toAbsolutePath(import.meta.url, "./dist");
 
 console.log('Purging "dist" directory...');
-await emptyDir("./dist");
+await emptyDir(OUTPUT_DIR);
 
 const content = await render();
 const browser = await puppeteer.launch({ headless: true });
@@ -12,7 +15,7 @@ await page.setContent(content, { waitUntil: "networkidle0" });
 
 console.log("Generating PDF file...");
 await page.pdf({
-  path: "dist/out.pdf",
+  path: `${OUTPUT_DIR}/resume.pdf`,
   format: "A4",
   displayHeaderFooter: false,
   printBackground: true,
