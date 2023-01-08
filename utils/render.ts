@@ -5,6 +5,7 @@ import {
   expandGlob,
   Handlebars,
   MagicString,
+  presetIcons,
   presetWebFonts,
   presetWind,
   transformDirectives,
@@ -15,10 +16,14 @@ const handlebars = new Handlebars({
   baseDir: toAbsolutePath(import.meta.url, "../template"),
   extname: ".hbs",
   layoutsDir: "",
-  partialsDir: "partials",
-  cachePartials: true,
+  partialsDir: "partials/",
+  cachePartials: false,
   defaultLayout: "layout",
-  helpers: undefined,
+  helpers: {
+    replace(str: string, a: string, b: string) {
+      return str.replace(a, b);
+    },
+  },
   compilerOptions: undefined,
 });
 
@@ -32,20 +37,21 @@ export async function render() {
 const unoConfig = {
   presets: [
     presetWind(),
+    presetIcons({
+      cdn: "https://esm.sh/",
+      extraProperties: {
+        display: "inline-block",
+        "vertical-align": "middle",
+      },
+    }),
     presetWebFonts({
       fonts: {
-        sans: "DM Sans:400,500,700",
+        sans: "Inter Tight:200,300,400,500,600,700,800",
       },
     }),
   ],
 
   transformers: [transformerVariantGroup()],
-
-  theme: {
-    fontSize: {
-      xxs: "0.625rem",
-    },
-  },
 };
 
 async function generateCSS() {
