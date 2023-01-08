@@ -1,4 +1,6 @@
 {
+  "html.format.indentHandlebars": true,
+  "editor.tabSize": 2,
   "deno.enable": true,
   "deno.unstable": true
 }
