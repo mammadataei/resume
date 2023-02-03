@@ -1,0 +1,29 @@
+basics:
+  name: Richard Hendriks
+  label: Programmer
+  image: ""
+  email: richard.hendriks@mail.com
+  phone: ${PHONE} # You can also use .env variables
+  url: http://richardhendricks.example.com
+  location:
+    address: 2712 Broadway St
+    postalCode: CA 94115
+    city: San Francisco
+    countryCode: US
+    region: California
+  profiles:
+    - network: Twitter
+      username: neutralthoughts
+      url: ""
+    - network: SoundCloud
+      username: dandymusicnl
+      url: https://soundcloud.example.com/dandymusicnl
+
+company: Google
+recipient:
+  name: John
+  full_name: John Doe
+  title: Hiring Manager
+
+content:
+  - lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.
