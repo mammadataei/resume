@@ -1,4 +1,4 @@
-import { loadResume } from "./loadResume.ts";
+import { loadCoverLetter, loadResume } from "./loadResume.ts";
 import { toAbsolutePath } from "./helpers.ts";
 import {
   createGenerator,
@@ -23,14 +23,29 @@ const handlebars = new Handlebars({
     replace(str: string, a: string, b: string) {
       return str.replace(a, b);
     },
+    today() {
+      const today = new Date();
+      return today.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    },
   },
   compilerOptions: undefined,
 });
 
-export async function render() {
-  return await handlebars.renderView("main", {
+export async function renderResume() {
+  return await handlebars.renderView("resume", {
     css: await generateCSS(),
     resume: await loadResume(),
+  });
+}
+
+export async function renderCoverLetter() {
+  return await handlebars.renderView("cover-letter", {
+    css: await generateCSS(),
+    resume: await loadCoverLetter(),
   });
 }
 

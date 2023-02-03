@@ -20,13 +20,10 @@ available in the `resume.yml` file.
 
 ```bash
 # run dev server
-deno task dev 
+deno task dev
 
 # build resume
-deno task build 
-
-# generate .env.d.ts
-deno task codegen
+deno task build
 ```
 
 ## Acknowledgments
