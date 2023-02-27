@@ -4,10 +4,7 @@ import { toAbsolutePath } from "./helpers.ts";
 const env = loadEnv();
 
 const RESUME_PATH = toAbsolutePath(import.meta.url, "../resume.yml");
-const COVER_LETTER_PATH = toAbsolutePath(
-  import.meta.url,
-  "../cover-letter.yml"
-);
+const LETTER_PATH = toAbsolutePath(import.meta.url, "../letter.yml");
 
 export async function loadResume() {
   const resumeContent = await Deno.readTextFile(RESUME_PATH);
@@ -17,7 +14,7 @@ export async function loadResume() {
 }
 
 export async function loadCoverLetter() {
-  const CoverLetterContent = await Deno.readTextFile(COVER_LETTER_PATH);
+  const CoverLetterContent = await Deno.readTextFile(LETTER_PATH);
   const CoverLetter = substitute(CoverLetterContent, resolveVariable, {
     percent: false,
   });

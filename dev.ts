@@ -8,7 +8,7 @@ serve(async (req) => {
 
   if (res) return res;
 
-  if (new URL(req.url).pathname === "/cover-letter") {
+  if (new URL(req.url).pathname === "/letter") {
     return new Response(await renderCoverLetter(), {
       headers: { "Content-Type": "text/html" },
     });

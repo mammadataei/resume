@@ -42,8 +42,8 @@ export async function renderResume() {
   });
 }
 
-export async function renderCoverLetter() {
-  return await handlebars.renderView("cover-letter", {
+export async function renderLetter() {
+  return await handlebars.renderView("letter", {
     css: await generateCSS(),
     resume: await loadCoverLetter(),
   });
