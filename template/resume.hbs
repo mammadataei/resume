@@ -14,8 +14,7 @@
           {{>header title="Contact Info"}}
 
           <p>{{email}}</p>
-          <p>{{phone}}</p>
-          <p>{{location.address}}</p>
+          <p>{{location.address}} {{phone}}</p>
 
           <div class="pt-3 space-y-2">
             {{#each profiles}}
@@ -60,7 +59,13 @@
       {{/resume.education}}
     </div>
 
-    <div class="w-2/3 pl-6 space-y-8">
+    <div class="w-2/3 pl-6 space-y-6">
+      <div class="">
+        {{> header title="Summary" }}
+
+        <p>{{resume.basics.summary}}</p>
+      </div>
+
       <div class="">
         {{> header title="Experience" }}
 
