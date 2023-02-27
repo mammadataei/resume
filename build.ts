@@ -1,35 +1,71 @@
 import { emptyDir } from "https://deno.land/std@0.164.0/fs/mod.ts";
-import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import puppeteer, {
+  Browser,
+} from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import {
+  Command,
+  EnumType,
+} from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
 import { toAbsolutePath } from "./utils/helpers.ts";
-import { renderCoverLetter, renderResume } from "./utils/render.ts";
+import { renderLetter, renderResume } from "./utils/render.ts";
 
-const OUTPUT_DIR = toAbsolutePath(import.meta.url, "./dist");
+const Page = new EnumType(["resume", "letter"]);
 
-console.log('Purging "dist" directory...');
-await emptyDir(OUTPUT_DIR);
+await new Command()
+  .type("page", Page)
+  .name("Build")
+  .description("Build the resume and cover letter.")
+  .version("v1.0.0")
+  .option("-f, --fileName [file:string]", "Output file name.")
+  .arguments("<page:page>")
+  .action(async ({ fileName }, page) => {
+    const OUTPUT_DIR = toAbsolutePath(import.meta.url, "./dist");
 
-console.log("Loading resume and cover letter...");
-const resume = await renderResume();
-const coverLetter = await renderCoverLetter();
+    console.log('Purging "dist" directory...');
+    await emptyDir(OUTPUT_DIR);
 
-console.log("Preparing browser...");
-const browser = await puppeteer.launch({ headless: true });
+    console.log("Preparing browser...");
+    const browser = await puppeteer.launch({ headless: true });
 
-console.log("Generating resume.pdf...");
-await printContent(resume, "resume.pdf");
+    if (page === "resume") {
+      const outputFileName = fileName || "resume";
 
-console.log("Generating cover-letter.pdf...");
-await printContent(coverLetter, "cover-letter.pdf");
+      console.log("Rendering resume...");
+      const resume = await renderResume();
 
-await browser.close();
-console.log("Done!");
+      console.log(`Generating ${outputFileName}.pdf...`);
+      await printContent(
+        browser,
+        resume,
+        `${OUTPUT_DIR}/${outputFileName}.pdf`
+      );
+    }
 
-async function printContent(content: string, filename: string) {
+    if (page === "letter") {
+      const outputFileName = fileName || "letter";
+
+      console.log("Rendering letter...");
+      const letter = await renderLetter();
+
+      console.log(`Generating ${outputFileName}.pdf...`);
+      await printContent(
+        browser,
+        letter,
+        `${OUTPUT_DIR}/${outputFileName}.pdf`
+      );
+    }
+
+    await browser.close();
+    console.log("Done!");
+  })
+  .parse();
+
+async function printContent(browser: Browser, content: string, path: string) {
   const page = await browser.newPage();
   await page.setContent(content, { waitUntil: "networkidle0" });
 
   await page.pdf({
-    path: `${OUTPUT_DIR}/${filename}`,
+    path,
     format: "A4",
     displayHeaderFooter: false,
     printBackground: true,
