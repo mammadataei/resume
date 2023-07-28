@@ -6,6 +6,5 @@ npm-debug.log
 .env
 env.d.ts
 
-resume.json
-resume.yml
-letter.yml
+data/*
+!data/*.example.yml

@@ -1,0 +1,58 @@
+name: Richard Hendriks
+title: Programmer
+contact:
+  email: richard.hendriks@mail.com
+  phone: ${PHONE} # You can also use .env variables
+  address: 2712 Broadway St
+  profiles:
+    - platform: Twitter
+      url: "https://twitter.com/neutralthoughts"
+    - platform: SoundCloud
+      url: https://soundcloud.example.com/dandymusicnl
+
+summary: Richard hails from Tulsa. He has earned degrees from the University of
+  Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper,
+  he worked for Hooli as a part time software developer. While his work focuses
+  on applied information theory, mostly optimizing lossless compression schema of
+  both the length-limited and adaptive variants, his non-work interests range widely,
+  everything from quantum computing to chaos theory. He could tell you about it,
+  but THAT would NOT be a “length-limited” conversation!
+
+experiences:
+  - company: Pied Piper
+    location: Palo Alto, CA
+    positions:
+      - position: CEO/President
+        from: "2013-12-01"
+        to: "2014-12-01"
+        highlights:
+          - Build an algorithm for artist to detect if their music was violating copy right
+            infringement laws
+          - Successfully won Techcrunch Disrupt
+          - Optimized an algorithm that holds the current world record for Weisman Scores
+
+education:
+  - institution: University of Oklahoma
+    field: Information Technology
+    degree: Bachelor
+    from: "2011-06-01"
+    to: "2014-01-01"
+    courses:
+      - DB1101 - Basic SQL
+      - CS2011 - Java Introduction
+
+skills:
+  - Web Development
+  - Testing
+  - Responsive Design
+  - Web Accessibility
+
+tools:
+  - HTML
+  - CSS
+  - Javascript
+
+projects:
+  - name: Miss Direction
+    url: https://www.example.com/
+    description: A mapping engine that misguides you
