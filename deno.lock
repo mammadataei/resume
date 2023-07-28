@@ -404,6 +404,8 @@
     "https://deno.land/x/dotenv@v3.2.0/mod.ts": "077b48773de9205266a0b44c3c3a3c3083449ed64bb0b6cc461b95720678d38e",
     "https://deno.land/x/dotenv@v3.2.0/util.ts": "693730877b13f8ead2b79b2aa31e2a0652862f7dc0c5f6d2f313f4d39c7b7670",
     "https://deno.land/x/handlebars@v0.9.0/mod.ts": "e4ced0bc5cf21882cd2c4c88148eb4ebcba4ecc7a4daadbd8033fa4d63e940dc",
+    "https://deno.land/x/jsx@v0.1.5/mod.ts": "24bb89837fda59c53c12a3c0e464378ca6de9b261dec1df57ba640b1cfed9611",
+    "https://deno.land/x/jsx_to_string@v0.1.2/mod.ts": "06de65fa6af9e63df6b2ba083c85999b19aafd58fe1374ef3d226a3ae311e4fc",
     "https://deno.land/x/puppeteer@16.2.0/mod.ts": "52a47aa1850fc0a8255d6c8c462f4ab7e43104d342e6de7bda334221ca8bdcac",
     "https://deno.land/x/puppeteer@16.2.0/src/deno/BrowserFetcher.ts": "6be7a586667b429138994a4955b2339fc58af9b6d08378672c8a2b052045e308",
     "https://deno.land/x/puppeteer@16.2.0/src/deno/BrowserRunner.ts": "a32b6d2df712afce5f0707aabb6fbcd1e9b1b20e90fc5c34daa081960a638e62",
@@ -534,8 +536,29 @@
     "https://deno.land/x/substitute@v0.2.1/_errors.ts": "10ab8e505d76eb76c8685322a5fbb0a4134df0ebf9f5747984d7b469f4b4f224",
     "https://deno.land/x/substitute@v0.2.1/mod.ts": "9ad20d9cf879b5240157ee580c5efbb10bd7e050dc7120b22fca4623b5f61478",
     "https://deno.land/x/substitute@v0.2.1/substitute.ts": "3a8a733b5ba4740bc3f3225a8f5cf8bf4de53e29c10bfda6bbbab63ae73ebca8",
+    "https://deno.land/x/zod@v3.21.4/ZodError.ts": "4de18ff525e75a0315f2c12066b77b5c2ae18c7c15ef7df7e165d63536fdf2ea",
+    "https://deno.land/x/zod@v3.21.4/errors.ts": "5285922d2be9700cc0c70c95e4858952b07ae193aa0224be3cbd5cd5567eabef",
+    "https://deno.land/x/zod@v3.21.4/external.ts": "a6cfbd61e9e097d5f42f8a7ed6f92f93f51ff927d29c9fbaec04f03cbce130fe",
+    "https://deno.land/x/zod@v3.21.4/helpers/enumUtil.ts": "54efc393cc9860e687d8b81ff52e980def00fa67377ad0bf8b3104f8a5bf698c",
+    "https://deno.land/x/zod@v3.21.4/helpers/errorUtil.ts": "7a77328240be7b847af6de9189963bd9f79cab32bbc61502a9db4fe6683e2ea7",
+    "https://deno.land/x/zod@v3.21.4/helpers/parseUtil.ts": "51a76c126ee212be86013d53a9d07f87e9ae04bb1496f2558e61b62cb74a6aa8",
+    "https://deno.land/x/zod@v3.21.4/helpers/partialUtil.ts": "998c2fe79795257d4d1cf10361e74492f3b7d852f61057c7c08ac0a46488b7e7",
+    "https://deno.land/x/zod@v3.21.4/helpers/typeAliases.ts": "0fda31a063c6736fc3cf9090dd94865c811dfff4f3cb8707b932bf937c6f2c3e",
+    "https://deno.land/x/zod@v3.21.4/helpers/util.ts": "8baf19b19b2fca8424380367b90364b32503b6b71780269a6e3e67700bb02774",
+    "https://deno.land/x/zod@v3.21.4/index.ts": "d27aabd973613985574bc31f39e45cb5d856aa122ef094a9f38a463b8ef1a268",
+    "https://deno.land/x/zod@v3.21.4/locales/en.ts": "a7a25cd23563ccb5e0eed214d9b31846305ddbcdb9c5c8f508b108943366ab4c",
+    "https://deno.land/x/zod@v3.21.4/mod.ts": "64e55237cb4410e17d968cd08975566059f27638ebb0b86048031b987ba251c4",
+    "https://deno.land/x/zod@v3.21.4/types.ts": "b5d061babea250de14fc63764df5b3afa24f2b088a1d797fc060ba49a0ddff28",
     "https://esm.sh/handlebars@4.7.6": "efc9d95428f57d36014f3626cf527e2a961f1608a5987623749659c77f4771f3",
     "https://esm.sh/jszip@3.5.0": "7473d6f6c92ca8e46b7fc2b18a184152b4f4ae96f5d1f03d0bd081c866f31953",
+    "https://esm.sh/preact@10.16.0/jsx-dev-runtime": "3ccc5255b1630318b83357a6ed86f4bdc95644e2ee0cf2d771d77ea8287f451b",
+    "https://esm.sh/preact@10.16.0/jsx-runtime": "9e67b64a5b48299c77d30bffc213735fdcf4b3b5d4ad8ff8d4136f246de5fa34",
+    "https://esm.sh/react@18.2.0/jsx-runtime": "914a55a07c388d345c5a0c11616ee5282242e8b8dfd0d505b83500ea04fd9870",
+    "https://esm.sh/stable/preact@10.16.0/denonext/jsx-dev-runtime.js": "286a303c8e439293e149233027926cf312ac5991d7f8b49697fa387bc0d6a866",
+    "https://esm.sh/stable/preact@10.16.0/denonext/jsx-runtime.js": "64770c709df77c4b64b79f84a4abf6189fd0c3ea461121870eca0cf2bcca87b0",
+    "https://esm.sh/stable/preact@10.16.0/denonext/preact.mjs": "01dc8bdf124926c611c0711081b9c162cf2735cccad7c2bc9914766f633ddb1d",
+    "https://esm.sh/stable/react@18.2.0/denonext/jsx-runtime.js": "54d8a51c6ca025380abd2d5302e4a9b38ff835d9759c4657e52314f587eaf6bf",
+    "https://esm.sh/stable/react@18.2.0/denonext/react.mjs": "3c4f23bcfc53b256fcfaf6f834fa9f584c3bb7be667b2682c6cb6ba8ef88f8e6",
     "https://esm.sh/v98/core-util-is@1.0.3/deno/core-util-is.js": "a2515ef6b73c1adc842e7970ee30a275838cad2085eb6b6bcd824fabef69bc6c",
     "https://esm.sh/v98/handlebars@4.7.6/deno/handlebars.js": "84d2acdb821831b3de98e56f357feea2e900bd9744634a9861c2008f00864cac",
     "https://esm.sh/v98/handlebars@4.7.6/types/index.d.ts": "f3a68054f682f21cec1eb6bc37d3c4c7f73b7723c7256f8a1ccc75873024aaa6",
@@ -553,13 +576,48 @@
     "https://esm.sh/v98/safe-buffer@5.1.2/deno/safe-buffer.js": "9441569b98991508d00920fa2661fdc2e12d2695730419704db6d788aef8661d",
     "https://esm.sh/v98/set-immediate-shim@1.0.1/deno/set-immediate-shim.js": "5172191aa7ea49e65f40a55b71a31a4ae8f1821396bd524fa1c5e2b2f1e7cb7a",
     "https://esm.sh/v98/source-map@0.6.1/deno/source-map.js": "431fbb8c10797b5ce6bfcc7d5d29de1fe654bd15237b771b093b7f03a2ec5db1",
-    "https://esm.sh/v98/util-deprecate@1.0.2/deno/util-deprecate.js": "465830ef20bb4e16da7d89898a5359736a8639c450e10db4fb3634bfbd8dd987"
+    "https://esm.sh/v98/util-deprecate@1.0.2/deno/util-deprecate.js": "465830ef20bb4e16da7d89898a5359736a8639c450e10db4fb3634bfbd8dd987",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/Options.ts": "09036a4f9b1fd051b4ab855e0a278ad7d51656394f9b1791e4993ef0f3771845",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/Refs.ts": "073e8070f8d086e7e06bb6a2f4fb12702e275899fbb0be83257fca7df20b0235",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/errorMessages.ts": "a8c34653f8f3503d93f6ab3cc2693d06932dce44af997ba08c5982cf7b6caa08",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parseDef.ts": "cde9df9480561f6c3067827d76570cc266841c5f02dee7669448c15daf8b31e0",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/any.ts": "79a4db369e7d2d0d282a27205008c158907cf13c785dd2a4ea47afbf86b04b7f",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/array.ts": "b7fa04dc61f1f2cec979f0709371f558564d9f312833c8dfa3a812841150770f",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/bigint.ts": "34a678f499201167d25b67ed6fcd0757676b11b006ba7047c8a7191974e33124",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/boolean.ts": "21f013df593b5f883288ce79ad30d7e45230918584b48d148f3f0738c8634317",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/branded.ts": "1ccccff93610080d2c67a8951c6aa7a417933993ff7c5e3d9b6ec52a18f8a5ab",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/catch.ts": "55631a42b7c8b234630386b73370f6f151070a85a11a0ca8ff8c8a9314c3afd8",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/date.ts": "6227052b927b04f0756e741812aa0a7dc452437abfa1441fd117c4a4cce10645",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/default.ts": "43f65b20ea96f034d2d79c12abe7c96397001d3ec5d96dfeeda41f9133cc3c63",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/effects.ts": "7f421d29cae4caf636068975bba403c3dbad81914f495010c9c57ed99f57a8d0",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/enum.ts": "6dc05eb1b6e23d815234cc8d4f9aee38c581040c2a2a8bcb1d6cd773a4098a8b",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/intersection.ts": "040591c9ddfbc712ac68806e82debb72c3fde8868cc9d9917b54a495a9b0d54b",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/literal.ts": "33b7167a73ce8b6adaca4fa9afa013065e126fdd3a80b83d6f4431d80ec3e4bf",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/map.ts": "e995f9fcbcc2838b758c112231b2610557d6e6b70359ccad4e4d5e048ab69186",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/nativeEnum.ts": "a6ad063ee733c5b39947b18e5bf0958f259d31aaf8833aed74c6271cc54a6369",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/never.ts": "301bda283d33de7055345551dab3a450bd90d3b630a7642901c3982a8e1d0238",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/null.ts": "4cba1e737d3f04de9c7d860f46044758bbf78facb2c8b98d55448b12869850e0",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/nullable.ts": "2106297a182d836a8f8cb7ea0d5427781eea0b5ce2bd617e017d5bd4b23238e0",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/number.ts": "14bfbf2e59f7babf0adb80e58aff97da473bbdf36f1f9460e48c9f5f398c73ff",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/object.ts": "eb400d591c554736e840778e63896033e7817c73f8052cc32bf68b33ae540aec",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/optional.ts": "d0741896eabd6e95d8b383649261fb987cf33354945506bf164d39e29d91d0d3",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/pipeline.ts": "4b46244bee7e64cccc5cbb89d7628df535fb700a51d5c56dd0ff5922d28cf99e",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/promise.ts": "5681fabbbb4639bcb83780562b36b5bd74de1a74e8b02ac76875e4a2b3fa7ad3",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/record.ts": "1ddc4c52fa95679262b6354bdb1bfd0427317458f862760b64f07997a8e1b519",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/set.ts": "d4267a4a2aba59ad24394fa936dbd7513778d287896b8a80adab8de6945ce855",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/string.ts": "0179f2be8ebf66204b311b98368ace7a706767a73fdc1c9f994caf933ea64329",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/tuple.ts": "e08123f03114625468af7f52e1686a5c83a494fef450861cacdc6f2f65cdbb0a",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/undefined.ts": "15bf8cfc7f15258bd17b3e8c4dcbc4dddeddadf4aa33a0fa9aafec986f49c942",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/union.ts": "ea6a3541eadad2bddef97dbe5af93bc28bddfed4fe6c393dcbf70c2e137828d8",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/parsers/unknown.ts": "4a61e81afaa4041f87498870fbd0b90249364c886dae360e7ef1f749a53c84a7",
+    "https://raw.githubusercontent.com/savy-91/zod-to-json-schema/3.20.4/deno_dist/zodToJsonSchema.ts": "c9eb575cb9bf8033dccf1cc7fb9bc9b8c12eafd2c596ff8ee67a4bb1b98a9425"
   },
   "npm": {
     "specifiers": {
       "@unocss/transformer-directives": "@unocss/transformer-directives@0.46.5",
       "magic-string": "magic-string@0.26.7",
-      "unocss": "unocss@0.46.5"
+      "unocss": "unocss@0.46.5",
+      "zod-to-json-schema": "zod-to-json-schema@3.21.4_zod@3.21.4"
     },
     "packages": {
       "@ampproject/remapping@2.2.0": {
@@ -1391,6 +1449,16 @@
       },
       "yocto-queue@0.1.0": {
         "integrity": "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==",
+        "dependencies": {}
+      },
+      "zod-to-json-schema@3.21.4_zod@3.21.4": {
+        "integrity": "sha512-fjUZh4nQ1s6HMccgIeE0VP4QG/YRGPmyjO9sAh890aQKPEk3nqbfUXhMFaC+Dr5KvYBm8BCyvfpZf2jY9aGSsw==",
+        "dependencies": {
+          "zod": "zod@3.21.4"
+        }
+      },
+      "zod@3.21.4": {
+        "integrity": "sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==",
         "dependencies": {}
       }
     }

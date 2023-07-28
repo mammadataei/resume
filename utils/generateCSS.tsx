@@ -1,9 +1,6 @@
-import { loadCoverLetter, loadResume } from "./loadResume.ts";
-import { toAbsolutePath } from "./helpers.ts";
 import {
   createGenerator,
   expandGlob,
-  Handlebars,
   MagicString,
   presetIcons,
   presetWebFonts,
@@ -11,43 +8,7 @@ import {
   transformDirectives,
   transformerVariantGroup,
 } from "../deps.ts";
-
-const handlebars = new Handlebars({
-  baseDir: toAbsolutePath(import.meta.url, "../template"),
-  extname: ".hbs",
-  layoutsDir: "",
-  partialsDir: "partials/",
-  cachePartials: false,
-  defaultLayout: "layout",
-  helpers: {
-    replace(str: string, a: string, b: string) {
-      return str.replace(a, b);
-    },
-    today() {
-      const today = new Date();
-      return today.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-    },
-  },
-  compilerOptions: undefined,
-});
-
-export async function renderResume() {
-  return await handlebars.renderView("resume", {
-    css: await generateCSS(),
-    resume: await loadResume(),
-  });
-}
-
-export async function renderLetter() {
-  return await handlebars.renderView("letter", {
-    css: await generateCSS(),
-    resume: await loadCoverLetter(),
-  });
-}
+import { toAbsolutePath } from "./helpers.ts";
 
 const unoConfig = {
   presets: [
@@ -69,10 +30,10 @@ const unoConfig = {
   transformers: [transformerVariantGroup()],
 };
 
-async function generateCSS() {
+export async function generateCSS() {
   const TEMPLATES_GLOB = toAbsolutePath(
     import.meta.url,
-    "../template/**/**.hbs"
+    "../template/**/**.tsx",
   );
 
   const templates: Array<string> = [];

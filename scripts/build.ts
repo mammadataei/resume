@@ -6,8 +6,8 @@ import {
   Command,
   EnumType,
 } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
-import { toAbsolutePath } from "./utils/helpers.ts";
-import { renderLetter, renderResume } from "./utils/render.ts";
+import { toAbsolutePath } from "../utils/helpers.ts";
+import { renderLetter, renderResume } from "../utils/render.tsx";
 
 const Page = new EnumType(["resume", "letter"]);
 
@@ -19,7 +19,7 @@ await new Command()
   .option("-f, --fileName [file:string]", "Output file name.")
   .arguments("<page:page>")
   .action(async ({ fileName }, page) => {
-    const OUTPUT_DIR = toAbsolutePath(import.meta.url, "./dist");
+    const OUTPUT_DIR = toAbsolutePath(import.meta.url, "../dist");
 
     console.log('Purging "dist" directory...');
     await emptyDir(OUTPUT_DIR);
@@ -37,7 +37,7 @@ await new Command()
       await printContent(
         browser,
         resume,
-        `${OUTPUT_DIR}/${outputFileName}.pdf`
+        `${OUTPUT_DIR}/${outputFileName}.pdf`,
       );
     }
 
@@ -51,7 +51,7 @@ await new Command()
       await printContent(
         browser,
         letter,
-        `${OUTPUT_DIR}/${outputFileName}.pdf`
+        `${OUTPUT_DIR}/${outputFileName}.pdf`,
       );
     }
 

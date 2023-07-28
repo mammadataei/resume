@@ -1,5 +1,5 @@
-import { refresh, serve } from "./deps.ts";
-import { renderLetter, renderResume } from "./utils/render.ts";
+import { refresh, serve } from "../deps.ts";
+import { renderLetter, renderResume } from "../utils/render.tsx";
 
 const middleware = refresh();
 

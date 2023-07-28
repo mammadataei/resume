@@ -1,9 +1,11 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net --allow-read --allow-write dev.ts",
-    "build": "deno run --allow-net --allow-read --allow-write --allow-env --allow-run build.ts"
+    "dev": "deno run --allow-net --allow-read --allow-write scripts/dev.ts",
+    "build": "deno run --allow-net --allow-read --allow-write --allow-env --allow-run scripts/build.ts"
   },
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "https://esm.sh/react@18.2.0",
     "types": ["./env.d.ts"]
   }
 }
