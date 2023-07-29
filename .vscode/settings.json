@@ -2,5 +2,9 @@
   "html.format.indentHandlebars": true,
   "editor.tabSize": 2,
   "deno.enable": true,
-  "deno.unstable": true
+  "deno.unstable": true,
+  "yaml.schemas": {
+    "./schema/resume.json": ["/data/resume*.yml"],
+    "./schema/letter.json": ["/data/letter*.yml"]
+  }
 }
