@@ -1,4 +1,3 @@
-import { emptyDir } from "https://deno.land/std@0.164.0/fs/mod.ts";
 import puppeteer, {
   Browser,
 } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
@@ -21,9 +20,6 @@ await new Command()
   .action(async ({ fileName }, page) => {
     const OUTPUT_DIR = toAbsolutePath(import.meta.url, "../dist");
 
-    console.log('Purging "dist" directory...');
-    await emptyDir(OUTPUT_DIR);
-
     console.log("Preparing browser...");
     const browser = await puppeteer.launch({ headless: true });
 
@@ -37,7 +33,7 @@ await new Command()
       await printContent(
         browser,
         resume,
-        `${OUTPUT_DIR}/${outputFileName}.pdf`,
+        `${OUTPUT_DIR}/${outputFileName}.pdf`
       );
     }
 
@@ -51,7 +47,7 @@ await new Command()
       await printContent(
         browser,
         letter,
-        `${OUTPUT_DIR}/${outputFileName}.pdf`,
+        `${OUTPUT_DIR}/${outputFileName}.pdf`
       );
     }
 
