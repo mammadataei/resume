@@ -15,16 +15,16 @@ await new Command()
   .name("Build")
   .description("Build the resume and cover letter.")
   .version("v1.0.0")
-  .option("-f, --fileName [file:string]", "Output file name.")
+  .option("-n, --name [name:string]", "Output file name.")
   .arguments("<page:page>")
-  .action(async ({ fileName }, page) => {
+  .action(async ({ name }, page) => {
     const OUTPUT_DIR = toAbsolutePath(import.meta.url, "../dist");
 
     console.log("Preparing browser...");
     const browser = await puppeteer.launch({ headless: true });
 
     if (page === "resume") {
-      const outputFileName = fileName || "resume";
+      const outputFileName = name || "resume";
 
       console.log("Rendering resume...");
       const resume = await renderResume();
@@ -38,7 +38,7 @@ await new Command()
     }
 
     if (page === "letter") {
-      const outputFileName = fileName || "letter";
+      const outputFileName = name || "letter";
 
       console.log("Rendering letter...");
       const letter = await renderLetter();
