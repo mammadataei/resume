@@ -6,7 +6,7 @@ export function Contact({ contact }: { contact: Contact }) {
 
   return (
     <div class="">
-      <Header title="Contact Info" />
+      <Header title="Contact" />
       <p>{email}</p>
       <p>
         {address} {phone}
