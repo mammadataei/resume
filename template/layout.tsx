@@ -10,7 +10,7 @@ export async function Layout({
   return (
     <html dir="ltr">
       <head>
-        <meta charSet="utf-8" />
+        <meta charset="utf-8" />
         <title>Resume</title>
         <link
           rel="stylesheet"
@@ -19,10 +19,7 @@ export async function Layout({
         <style dangerouslySetInnerHTML={{ __html: css }}></style>
       </head>
 
-      <body>
-        <script src="https://deno.land/x/refresh@1.0.0/client.js"></script>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

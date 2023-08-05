@@ -2,6 +2,7 @@ import { Header } from "./components/header.tsx";
 import { Contact } from "./components/contact.tsx";
 import type { Resume } from "../schema/types.ts";
 import { loadResume } from "../utils/loadResume.ts";
+import { Experiences } from "./components/experiences.tsx";
 
 export function List({
   title,
@@ -15,7 +16,9 @@ export function List({
       <Header title={title} />
 
       <ul class="list-disc pl-4">
-        {items.map((item) => <li class="">{item}</li>)}
+        {items.map((item) => (
+          <li class="">{item}</li>
+        ))}
       </ul>
     </div>
   );
@@ -37,7 +40,7 @@ export async function Resume() {
 
   return (
     <div class="font-sans font-normal text-xs text-slate-800 leading-relaxed tracking-wide">
-      <div class="flex pt-6">
+      <div class="flex">
         <div class="w-1/3 space-y-8 pr-6">
           <div class="space-y-1">
             <Header title={title} />
@@ -58,47 +61,23 @@ export async function Resume() {
               {education[0].from} - {education[0].to}
             </p>
           </div>
+
+          {/* <div class="space-y-1">
+            <Header title={title} />
+            <h1 class="text-4xl font-bold text-stone-700">{name}</h1>
+          </div> */}
         </div>
 
         <div class="w-2/3 pl-6 space-y-6">
-          {
-            /* <div class="">
-            <Header title="Summary" />
+          {/* <div class="">
+          <Header title="Summary" />
             <p>{summary}</p>
-          </div> */
-          }
+          </div> */}
+
+          <Experiences experiences={experiences} />
 
           <div class="">
-            <Header title="Experience" />
-
-            <div class="space-y-6">
-              {experiences.map(({ company, positions }) => (
-                <div class="space-y-0.5">
-                  <div class="flex justify-start items-baseline gap-1 font-medium text-sm">
-                    <h3 class="">{company}</h3>
-                    <span>/</span>
-                    <p class="">{positions[0].position}</p>
-                  </div>
-
-                  <div class="flex space-x-1">
-                    <p>
-                      {positions[0].from} - {positions[0].to}
-                    </p>
-                  </div>
-
-                  <ul class="list-disc pl-4 pt-1 space-y-0.5">
-                    {positions[0].highlights.map((highlight) => (
-                      <li class="">{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div class="">
-            <Header title="Open source projects and contributions" />
-
+            <Header title="Open source projects" />
             <div class="space-y-4">
               {projects.map(({ name, description, url }) => (
                 <div class="">
@@ -108,8 +87,7 @@ export async function Resume() {
                     class="inline-flex items-center justify-start space-x-1 font-medium text-sm"
                   >
                     <span>{name}</span>
-                    <span class="i-lucide:external-link text-xs text-gray-600">
-                    </span>
+                    <span class="i-lucide:external-link text-xs text-gray-600"></span>
                   </a>
 
                   <p class="pt-1">{description}</p>
