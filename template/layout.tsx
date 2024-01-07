@@ -17,6 +17,7 @@ export async function Layout({
           href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
         />
         <style dangerouslySetInnerHTML={{ __html: css }}></style>
+        <script src="/client.js"></script>
       </head>
 
       <body>{children}</body>
