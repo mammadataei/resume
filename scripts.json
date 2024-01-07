@@ -1,0 +1,10 @@
+{
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "scripts": {
+    "dev": "deno run --allow-net --allow-read --allow-write scripts/dev.ts"
+  },
+  "watcher": {
+    "exts": ["js", "ts", "tsx", "json", "yml"],
+    "match": ["deno.json", "**/*.yml", "**/*.tsx", "**/*.ts", "**/*.js"]
+  }
+}
