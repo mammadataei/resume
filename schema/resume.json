@@ -33,32 +33,18 @@
                 "format": "uri"
               }
             },
-            "required": [
-              "platform",
-              "url"
-            ],
+            "required": ["platform", "url"],
             "additionalProperties": false
           }
         }
       },
-      "required": [
-        "email",
-        "phone",
-        "address",
-        "profiles"
-      ],
+      "required": ["email", "phone", "address", "profiles"],
       "additionalProperties": false
     },
     "summary": {
       "type": "string"
     },
     "skills": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "tools": {
       "type": "array",
       "items": {
         "type": "string"
@@ -96,21 +82,13 @@
                   }
                 }
               },
-              "required": [
-                "position",
-                "from",
-                "to",
-                "highlights"
-              ],
+              "required": ["position", "from", "to", "highlights"],
               "additionalProperties": false
             },
             "minItems": 1
           }
         },
-        "required": [
-          "company",
-          "positions"
-        ],
+        "required": ["company", "positions"],
         "additionalProperties": false
       }
     },
@@ -141,13 +119,7 @@
             }
           }
         },
-        "required": [
-          "institution",
-          "degree",
-          "field",
-          "from",
-          "to"
-        ],
+        "required": ["institution", "degree", "field", "from", "to"],
         "additionalProperties": false
       }
     },
@@ -166,11 +138,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "name",
-          "description",
-          "url"
-        ],
+        "required": ["name", "description", "url"],
         "additionalProperties": false
       }
     }
@@ -181,7 +149,6 @@
     "contact",
     "summary",
     "skills",
-    "tools",
     "experiences",
     "education",
     "projects"

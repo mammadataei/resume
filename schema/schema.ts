@@ -22,7 +22,7 @@ export const ExperienceSchema = z.object({
         from: z.string(),
         to: z.string(),
         highlights: z.array(z.string()),
-      }),
+      })
     )
     .min(1),
 });
@@ -48,7 +48,6 @@ export const ResumeSchema = z.object({
   contact: ContactSchema,
   summary: z.string(),
   skills: z.array(z.string()),
-  tools: z.array(z.string()),
   experiences: z.array(ExperienceSchema),
   education: z.array(EducationSchema),
   projects: z.array(ProjectSchema),
