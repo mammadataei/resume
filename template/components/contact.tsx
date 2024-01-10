@@ -5,25 +5,33 @@ export function Contact({ contact }: { contact: Contact }) {
   const { email, address, phone, profiles } = contact;
 
   return (
-    <div class="">
-      <Header title="Contact" />
-      <p>{email}</p>
+    <div class="flex gap-1">
+      {/* <Header title="Contact" /> */}
       <p>
         {address} {phone}
       </p>
 
-      <div class="pt-3 space-y-2">
-        {profiles.map(({ platform, url }) => (
-          <div class="">
-            <h3 class="font-medium">{platform}</h3>
-            <a href={url} target="_blank" class="inline-block">
-              <span>{url.replace("https://", "")}</span>
-              <span class="i-lucide:external-link text-xs text-gray-600 ml-1">
-              </span>
-            </a>
-          </div>
-        ))}
-      </div>
+      <span>—</span>
+
+      <a class="underline" href={`mailto:${email}`}>
+        {email}
+      </a>
+
+      <span>—</span>
+      {profiles.map(({ platform, url }, index) => (
+        <div class="flex items-center gap-1">
+          {/* <h3 class="font-medium">{platform}</h3> */}
+          <a
+            href={url}
+            target="_blank"
+            class="flex items-center inline-block underline"
+          >
+            <span>{url.replace("https://", "")}</span>
+            <span class="i-lucide:external-link text-xs text-gray-600 ml-1"></span>
+          </a>
+          {index !== profiles.length - 1 && <span>—</span>}
+        </div>
+      ))}
     </div>
   );
 }

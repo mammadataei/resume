@@ -22,7 +22,7 @@ const unoConfig = {
     }),
     presetWebFonts({
       fonts: {
-        sans: "Inter Tight:200,300,400,500,600,700,800",
+        sans: "Lato:400,500,600,700,800",
       },
     }),
   ],
@@ -33,7 +33,7 @@ const unoConfig = {
 export async function generateCSS() {
   const TEMPLATES_GLOB = toAbsolutePath(
     import.meta.url,
-    "../template/**/**.tsx",
+    "../template/**/**.tsx"
   );
 
   const templates: Array<string> = [];
