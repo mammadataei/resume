@@ -33,20 +33,12 @@
                 "format": "uri"
               }
             },
-            "required": [
-              "platform",
-              "url"
-            ],
+            "required": ["platform", "url"],
             "additionalProperties": false
           }
         }
       },
-      "required": [
-        "email",
-        "phone",
-        "address",
-        "profiles"
-      ],
+      "required": ["email", "phone", "address", "profiles"],
       "additionalProperties": false
     },
     "company": {
@@ -68,12 +60,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "firstName",
-        "lastName",
-        "title",
-        "address"
-      ],
+      "required": ["firstName", "lastName", "title", "address"],
       "additionalProperties": false
     },
     "body": {
@@ -83,14 +70,7 @@
       }
     }
   },
-  "required": [
-    "name",
-    "title",
-    "contact",
-    "company",
-    "recipient",
-    "body"
-  ],
+  "required": ["name", "title", "contact", "company", "recipient", "body"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }
