@@ -1,5 +1,6 @@
 import { Header } from "./header.tsx";
 import type { Experience } from "../../schema/types.ts";
+import { md } from "../../utils/md.ts";
 
 export function Experiences({
   experiences,
@@ -40,7 +41,7 @@ export function Experiences({
                       <li
                         class=""
                         dangerouslySetInnerHTML={{
-                          __html: highlight,
+                          __html: md(highlight),
                         }}
                       ></li>
                     ))}
