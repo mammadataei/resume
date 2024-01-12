@@ -22,7 +22,7 @@ export async function Resume() {
   } = resume;
 
   return (
-    <div class="font-sans font-normal text-xs text-slate-800 leading-relaxed tracking-wide">
+    <div class="font-sans font-normal text-xs text-slate-700 leading-relaxed tracking-wide">
       <div class="space-y-4">
         <div class="space-y-1">
           <div class="flex items-center gap-2 text-2xl font-bold text-sky-600">

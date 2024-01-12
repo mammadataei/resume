@@ -1,4 +1,5 @@
 import { Project } from "../../schema/types.ts";
+import { md } from "../../utils/md.ts";
 import { Header } from "./header.tsx";
 
 export function Projects({ projects }: { projects: Array<Project> }) {
@@ -18,7 +19,11 @@ export function Projects({ projects }: { projects: Array<Project> }) {
               <span class="i-lucide:external-link text-xs text-gray-600"></span>
             </a>
 
-            <p>{description}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: md(description),
+              }}
+            />
           </div>
         ))}
       </div>

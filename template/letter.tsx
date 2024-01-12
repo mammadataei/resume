@@ -7,7 +7,7 @@ export async function Letter(): Promise<JSX.Element> {
   const { title, name, contact, company, recipient, body } = letter;
 
   return (
-    <div class="space-y-8 font-sans font-normal text-xs leading-relaxed tracking-wide">
+    <div class="space-y-8 font-sans font-normal text-xs text-slate-800 leading-relaxed tracking-wide">
       <header class="space-y-0.5 text-slate-700">
         <h1 class="text-2xl font-bold text-sky-600">{name}</h1>
         <h2 class="text-sm font-medium">{title}</h2>
