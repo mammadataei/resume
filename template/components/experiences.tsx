@@ -18,10 +18,14 @@ export function Experiences({
               <h3 class="">{company}</h3>
             </div>
 
-            <div class="space-y-2">
+            <div class={`space-y-2 `}>
               {positions.map((position) => (
                 <div>
                   <div class="flex justify-start items-center gap-1 text-sky-600">
+                    {positions.length > 1 && (
+                      <div class="mr-2 w-2 h-2 bg-slate-300 rounded-full"></div>
+                    )}
+
                     <div class="font-semibold">{position.position}</div>
                     <span>—</span>
                     <div class="text-0.625rem">
@@ -36,7 +40,13 @@ export function Experiences({
                     </div>
                   </div>
 
-                  <ul class="list-disc pl-4 pt-1 space-y-0.5">
+                  <ul
+                    class={`list-disc pl-4 mt-1 space-y-0.5 ${
+                      positions.length > 1
+                        ? "border-l-2 border-slate-200 ml-0.8 pl-8"
+                        : ""
+                    }`}
+                  >
                     {position.highlights.map((highlight) => (
                       <li
                         class=""
