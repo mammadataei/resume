@@ -36,7 +36,7 @@ export async function Resume() {
 
         <Summary summary={summary} />
 
-        <List title="Skills" items={skills} />
+        <List title="Skills" items={skills.map((group) => group.join(", "))} />
 
         <Experiences experiences={experiences} />
 
